@@ -43,8 +43,8 @@ export default function App() {
         // Step 1: car drives from top down to the middle
         .fromTo(
           '.car-wrap',
-          { y: '-36vh', scale: 0.95 },
-          { y: '0vh', scale: 1.15, ease: 'none', duration: 3 }
+          { y: '-38vh', scale: 0.8 },
+          { y: '0vh', scale: 1, ease: 'none', duration: 3 }
         )
         // Step 2: headline appears
         .fromTo(
@@ -68,30 +68,30 @@ export default function App() {
         {/* Background glow: purple center, warm orange bottom */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(124,58,237,0.22),transparent_60%),radial-gradient(ellipse_at_bottom,rgba(249,115,22,0.18),transparent_55%)]" />
 
-        {/* Headline */}
-        <div className="headline-wrap absolute top-12 w-full will-change-transform md:top-16">
-          <h1 className="headline headline-gradient font-display text-center text-xl font-black tracking-[0.35em] md:text-6xl md:tracking-[0.5em]">
+        {/* Car: sized by screen height so it never overlaps the text */}
+        <div className="car-wrap absolute left-1/2 top-1/2 z-0 w-[min(30rem,38vh)] will-change-transform">
+          <img src={car} alt="Car top view" className="car car-glow w-full" />
+        </div>
+
+        {/* Headline (above the car) */}
+        <div className="headline-wrap absolute top-8 z-10 w-full will-change-transform md:top-10">
+          <h1 className="headline headline-gradient font-display text-center text-xl font-black tracking-[0.35em] md:text-5xl md:tracking-[0.5em]">
             WELCOME ITZFIZZ
           </h1>
         </div>
 
-        {/* Car */}
-        <div className="car-wrap absolute left-1/2 top-1/2 w-72 will-change-transform md:w-[30rem]">
-          <img src={car} alt="Car top view" className="car car-glow w-full" />
-        </div>
-
-        {/* Stats */}
-        <div className="stats-wrap absolute bottom-8 w-full md:bottom-10">
-          <div className="grid grid-cols-2 gap-4 px-4 text-center md:grid-cols-4 md:gap-6 md:px-16">
+        {/* Stats (above the car) */}
+        <div className="stats-wrap absolute bottom-6 z-10 w-full md:bottom-8">
+          <div className="grid grid-cols-2 gap-3 px-4 text-center md:grid-cols-4 md:gap-6 md:px-16">
             {stats.map((s) => (
               <div
                 key={s.text + s.value}
-                className="stat rounded-2xl border border-amber-300/20 bg-white/5 px-3 py-4 backdrop-blur-sm will-change-transform"
+                className="stat rounded-2xl border border-amber-300/20 bg-white/5 px-3 py-3 backdrop-blur-sm will-change-transform"
               >
-                <p className="stat-gradient font-display text-3xl font-black md:text-5xl">
+                <p className="stat-gradient font-display text-2xl font-black md:text-4xl">
                   {s.value}
                 </p>
-                <p className="font-body mt-2 text-sm font-medium tracking-wide text-slate-300 md:text-lg">
+                <p className="font-body mt-1 text-sm font-medium tracking-wide text-slate-300 md:text-base">
                   {s.text}
                 </p>
               </div>
