@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+html,
+body {
+  margin: 0;
+  background: #05060f;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-body {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Headline: cyan → white → warm amber */
+.headline-gradient {
+  background: linear-gradient(90deg, #22d3ee 0%, #ffffff 50%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 18px rgba(251, 191, 36, 0.35));
+}
+
+/* Stat numbers: amber → orange */
+.stat-gradient {
+  background: linear-gradient(180deg, #fde68a 0%, #f97316 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 12px rgba(249, 115, 22, 0.4));
+}
+
+/* Glowing car */
+.car-glow {
+  filter: drop-shadow(0 0 40px rgba(34, 211, 238, 0.4));
+}
